@@ -1,0 +1,232 @@
+What is Chef?
+-----------------------------
+- Configuration mgmt tool
+- Dev by CHEF
+- Written in GOlang
+- Release	
+			Community - CMD 
+			Enterprise - GUI
+
+- IAAC
+- Cloud infra auto plat*
+
+What is tool?
+- Save Time
+		1 dep -- 10 mins
+		1000 Servers -- 10 mins
+		1000 Servers -- 3 mins
+- Save Cost
+		time == cost
+		cosistent deployment
+- Imp* Quality of work in Software
+
+mgmt
+	- SERVER(S)
+
+Configuration
+-----------------
+		Manage config of Server(S) 
+
+What config items we have in each Server?
+----------------------------------------
+items = resources
+
+Chef can manage|config following resources of the server
+
+HARDWARE
+		HYPERVISOR
+					CHEF
+SOFTWARE
+	file
+	directory
+	package
+	services
+	apt
+	yum
+	nuget
+	powershell
+	bash
+
+PEOPLE
+	user
+	group
+
+PROCESS
+	policy
+
+===================================================
+Why Chef?
+---------------------
+			JAVA - PYTHON - RUBY
+			----------------------------------
+			Hard to learn - share - debug - test - extend
+
+			BASH SCRIPT - pOWERSHELL
+			-----------------------------------
+			Easy to learn - share - debug - test - extend
+
+			BASH SCRIPT  - WINDOWS????
+			pOWERSHELL - Linux?????
+
+			DOMAIN SPECIFIC LANG
+			-------------------------
+			Compiled	- JAVA - CC++				- 1month
+			Inter - Python - php					- 15 days
+			Declarative lang - yaml json xml - 10 mins
+				with a support of DOMAIN SPECIFIC LANG
+			
+			Every prb --- there is a tool -  DOMAIN SPECIFIC LANG
+			--------------------------------------------
+			Chef - Platform indep
+			Super Easy to learn - share - debug - test - extend
+			Ideompotent
+			---------------------------
+			1st --- 10 STEPS ---> 10 mins
+			2nd --- 2 changes ---> 2 mins
+
+			Desire				actual
+----------------------------
+			Chef code			server
+
+
+
+Others -----> Ansible - Chef - Puppet - Salt
+
+------------------------
+https://www.chef.io/downloads
+https://www.chef.io/
+
+========================================================================
+Roles in Chef?
+-----------------------------------------
+Programmer
+- Write, debug, test cookbooks.
+
+
+Admin
+- Manage SERVER(S), Cred, and Apply cookbooks in 1000s of server
+========================================================================
+How to become a programmer in Chef?
+========================================================================
+JAVA
+--------------------------------------------
+JDK 					--> .JAVA -> .CLASS -> WAR|JAR --> Deploy to SERVER
+
+ChefDK
+Chef Workstation   --> .rb(recipe)==============> Cookbooks ---> Give to ADMIN
+
+.JAVA
+---------------------
+- Hello world
+- Operators
+- Conditions
+- Loops
+- Function
+- Class
+
+.rb(recipe) 
+---------------------
+- Hello world
+- Operators
+- Conditions
+- Loops
+- Function
+- Class
+
+How to write .rb(recipe)??????
+=====================================
+
+HUNGRY --> FOOD --> KITCHEN -> COOK -> Recipe -> Cookbook -> Chef
+---------------------------------------------------------------
+You are here coz you want to become a Chef???
+--------------------------------------------------------------
+Ranveer
+-------
+		- ingredients - Properties 
+		- How to mix well
+		------------------------
+		recipe
+
+YOU
+		- - ingredients === resources of server - Properties - action
+		
+					properties			action
+
+	file									C| E| D										
+	directory								C| E| D
+	package								I | R | U
+	services								S | S | R | E |D
+	apt
+	yum
+	nuget
+	powershell
+	bash
+	user
+	group
+	policy
+	https://docs.chef.io/resources/
+
+	recpie
+		resource1
+			proper1
+			proper2
+			proper3
+		action
+		resource1
+			proper1
+			proper2
+			proper3
+		action
+		resource1
+			proper1
+			proper2
+			proper3
+		action
+		resource1
+			proper1
+			proper2
+			proper3
+		action
+		resource1
+			proper1
+			proper2
+			proper3
+		action
+		resource1
+			proper1
+			proper2
+			proper3
+		action
+		resource1
+			proper1
+			proper2
+			proper3
+		action
+
+
+13.127.31.0
+centos
+===========================================
+Demo # 1  - Installing  Chef workstation
+-----------------------------------------
+https://www.devopsschool.com/blog/how-to-install-chef-development-kitchefdk/
+
+
+===========================================
+Demo # 2  - Writing hello world recipe
+-----------------------------------------
+
+
+===========================================
+Demo # 3  - Write a recipe for setting up webserver
+-----------------------------------------
+
+
+
+LAB
+
+Assignment
+
+
+
+
