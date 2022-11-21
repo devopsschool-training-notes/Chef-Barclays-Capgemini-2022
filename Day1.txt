@@ -216,17 +216,74 @@ https://www.devopsschool.com/blog/how-to-install-chef-development-kitchefdk/
 Demo # 2  - Writing hello world recipe
 -----------------------------------------
 
+https://www.devopsschool.com/blog/chef-tutorials-how-to-write-and-test-a-chef-recipe/
+
+How to store recipe?
+- .rb
+
+Is that a ruby code?
+- NO. its a DSL of ruby
+
+What would be the content.
+
+file
+-------
+
+file 'index.html' do
+  content                    "Welcome to Chef Class"
+end
+
+
+
 
 ===========================================
 Demo # 3  - Write a recipe for setting up webserver
 -----------------------------------------
-
-
-
-LAB
-
-Assignment
+Step 1 - install apache in centos
 
 
 
 
+
+Step 2 - Create a index.html in /var/www/html
+
+
+
+
+Step 3 - Start a apache server
+
+systemctl start httpd
+
+service 'httpd' do
+  action :start
+end
+
+
+yum update
+asss
+------------------
+package 'httpd'
+
+file '/var/www/html/index.html' do
+  content                    "Welcome to Chef Class"
+end
+
+service 'httpd' do
+  action :start
+end
+-------------------------
+
+
+download a package
+extract a package at certn locat
+modify
+start some file --- 
+
+
+
+package 'httpd' do
+  action                     :upgrade
+  version				"5.6"
+end
+
+https://www.devopsschool.com/blog/example-of-chef-recipe-program/
