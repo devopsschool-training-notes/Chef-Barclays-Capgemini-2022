@@ -1,0 +1,32 @@
+What is Chef?
+Why CHef?
+Other tools?
+Role in Chef?
+	- programmer
+	- Admin
+
+What is Chef recipe?
+How to test and verify recipe?
+		Resources
+
+-------------------------------
+- Variables == Attributes
+- Conditions
+- Looping
+- Template
+- Files
+-------------------------------
+How to MANAGE a large recipe thorough smaller multiple recipe
+
+How to submit Assignment? 
+-----------------------------------
+www.Debug.School
+
+====================================
+https://www.devopsschool.com/blog/chef-lab-and-excercise-recipe-part-1/
+
+- https://www.devopsschool.com/blog/top-10-chef-in-built-and-common-resource-types-with-example/
+- https://docs.chef.io/resources/
+
+
+
