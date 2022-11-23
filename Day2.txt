@@ -28,5 +28,175 @@ https://www.devopsschool.com/blog/chef-lab-and-excercise-recipe-part-1/
 - https://www.devopsschool.com/blog/top-10-chef-in-built-and-common-resource-types-with-example/
 - https://docs.chef.io/resources/
 
+==============================================
+
+Chef Attributes
+======================================
+== Variable
+		Set as a 
+				ARRAY
+				DICT
+
+How to set Attributes in recipe?
+How to use Attributes in recipe?
+
+Recipe -- PART OF THIS DISCUSSION
+Cookbook
+Roles
+Environment
+Org
+Node
+==============================================
+https://www.devopsschool.com/blog/chef-tutorials-working-with-chef-attributes/
+
+node.default[webserver][port] = "80"
+node.default[webserver][webdir] = "/opt/apache"
+
+
+node.default['devopsschool']['message'] = 'Hello People'
+node.default['devopsschool']['dev']['message'] = 'Hello People'
+node.default['devopsschool']['qa']['message'] = 'Hello People'
+node.default['devopsschool']['message3'] = 'Hello People'
+
+
+log "Welcome to Chef, #{node['devopsschool']['message']} - #{node['devopsschool']['message1']} - #{node['devopsschool']['message2']}!" do
+  level :info
+end
+
+log "Welcome to Chef, #{node['devopsschool']['message']}'!" do
+  level :info
+end
+
+====================================================
+ohai | facter
+====================================================
+CHEF	|	PUPPET | Ansible
+
+ubuntu - apache2
+centos - httpd
+if os = ubuntu
+	package = apache2
+if os = centos
+	package = httpd
+
+
+log "The platform on which a node is running:- #{node['platform']}!" do
+  level :info
+end
+
+log "The platform family is a Chef Infra specific:- #{node['platform_family']}!" do
+  level :info
+end
+
+log "The version of the platform: #{node['platform_version']}!" do
+  level :info
+end
+
+log "The IP address for a node: #{node['ipaddress']}!" do
+  level :info
+end
+
+log "The MAC address for a node: #{node['macaddress']}!" do
+  level :info
+end
+
+log "fully qualified domain name: #{node['fqdn']}!" do
+  level :info
+end
+
+
+log "The host name for the node: #{node['hostname']}!" do
+  level :info
+end
+
+
+log "The domain for the node: #{node['domain']}!" do
+  level :info
+end
+
+log "A list of recipes associated with a node: #{node['recipes']}!" do
+  level :info
+end
+
+log "The time at which Ohai was last run: #{node['recipes']}!" do
+  level :info
+end
+
+
+https://www.devopsschool.com/blog/chef-tutorials-working-with-ohai/
+=================================================================
+template
+==================================================================
+php		| 		python		| ruby		| java
+
+===================================================================
+blade		| jinga2		| erb    | 
+
+
+DISPLAY "HOST NAME" on index.html, n i have 100s of server.
+
+Step 1 - Set node['hostname'] in index.html.erb
+
+node['hostname'] === .rb ==== Would introp*
+node['hostname'] === index.html using "file" "cookbook_file" ==== Would NOT introp*
+
+Step 2 - USE template resources
+
+template '/var/www/html/index.html' do
+  source 'index.html.erb'
+end
+
+
+DEV - call - dev-config
+QA - call - qa-config
+Prod - call - prod-config
+
+
+   template "/etc/myserver.conf" do
+      source "sample.erb"
+      owner "root"
+      group "root"
+      mode "644"
+      variables :hostname => node["fqdn"], :servers => ["alpha", "bravo", "charlie"]
+    end
+
+<%= @hostname %>
+
+
+node.default['devopsschool']['message'] = 'Hello People'
+
+<h1> This is our chef ohai attributes <%=node['platform'] %></h1>
+
+<h1> This is our Recipe attributes <%=node['devopsschool']['message'] %></h1>
+
+<% node['devopsschool']['message'].each do |key, value| -%>
+    <% unless value.empty? -%>
+        <%= key %>=<%= value %>
+    <% end %>
+<% end %>
+
+
+
+node.default['devopsschool']['message'] = 'Hello People'
+
+package 'httpd'
+
+template "/var/www/html/index.html" do
+  source "index.html.erb"
+  owner 'root'
+  group 'root'
+  mode '0755'
+end
+
+ervice 'httpd' do
+  action :start
+end
+
+
+Chef Tutorials: template Resource with example
+
+
+
+
 
 
