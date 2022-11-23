@@ -1,0 +1,73 @@
+What is Chef Cookbook?
+----------------------------------
+is directory structure
+	for what??
+	to manage following
+	to share following
+	to run 
+	- Collection of recipe? == Chapter
+	- index - title - author - references - glossary - copyright
+	- templates
+   - files
+	- attributes
+
+
+	- recipes				DONE
+		default.rb
+			resources
+   - templates			DONE		
+			.erb
+			.erb
+   - files				DONE
+			deploy.sh
+			deploy.sh
+   - attributes			DONE
+			default.rb
+				
+				
+				
+
+
+
+
+
+How to create cookbooks?
+- DONE
+
+
+
+
+How to test a cookbook?
+	- chef client
+	- chef - solo
+
+
+chef-client --local-mode --runlist 'recipe[webserver]'
+
+
+
+
+default['devopsschool']['message'] = 'Hello Cookbooks'
+
+
+bash 'Execute my script' do 
+  user 'root'
+  cwd  '/root/chef'
+  code <<-EOH
+    deploy.sh
+  EOH
+end
+
+
+cookbook_file '/opt' do
+  source 'deploy.sh'
+  action :create
+end
+
+https://github.com/devopsschool-sample-programs/chef-cookbooks
+
+
+
+
+
+
