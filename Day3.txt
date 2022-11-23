@@ -67,6 +67,73 @@ end
 https://github.com/devopsschool-sample-programs/chef-cookbooks
 
 
+===========================================================
+
+Q1. What if i have more recipe inside recipes dir and to test it?
+
+$ chef-client --local-mode --runlist 'recipe[webserver::log]'
+
+Q2. How to call another recipe from default.rb
+
+include_recipe '::log'
+
+$ chef-client --local-mode --runlist 'recipe[webserver]'
+
+
+Q3. How to test multiple cookbooks at one go?
+
+$ chef-client --local-mode --runlist 'recipe[dbserver]'
+$ chef-client --local-mode --runlist 'recipe[dbserver]'
+$ chef-client --local-mode --runlist 'recipe[dbserver],recipe[webserver]'
+
+
+Q4. How to call another cookbook from one cookbook?
+
+Ways # 1 - from recipe
+
+include_recipe 'dbserver'
+
+
+
+Ways # 1 - from metadata.rb
+- https://docs.chef.io/config_rb_metadata/
+
+
+https://www.devopsschool.com/blog/how-to-call-another-chef-recipe-within-same-or-other-cookbook/
+
+====================================================================
+Assignment # 1 - yesterday all 10 recipe, you stored under one cookbook and call all other  recipe from default.rb
+
+Assignment # 2 - yesterday's all 10 recipe, create individual cookbooks and create one master cookbooks and call all 10 cookbooks from master cookbooks
+
+How to submit an assignment?
+$ cd cookbooks
+$ git init
+$ git add .
+$ git commit -m"my cookbooks"
+$ git push HTTP-URL master 
+
+How to get token?
+- https://github.com/settings/tokens
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
