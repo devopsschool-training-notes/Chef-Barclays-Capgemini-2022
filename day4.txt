@@ -1,0 +1,111 @@
+How to do conditioning in recipe? == Guards
+https://www.devopsschool.com/blog/chef-tutorials-how-to-set-conditions-in-chef-cookbooks-recipe-using-guard/
+
+Run some commands	TRUE(run resources) FALSE
+			--------
+			bash
+			ps
+
+if node['platform'] == 'debian' || node['platform'] == 'ubuntu'
+
+	log "The IP address for a node: #{node['platform']}!" do
+  		level :info
+	end
+
+end	
+
+
+include_recipe 'python::repository' if node['python']['installrepo']
+
+include_recipe 'python::repository' if node['platform'] == 'windows'
+
+
+log "Welcome to Chef, platform is #{node['platform']}!" do
+        level :info
+        only_if node['platform_version'].to_f == 'debian' }
+end
+
+package "httpd" do
+ action :install
+ only_if { node['platform'] == 'centos' }
+end
+
+
+
+
+
+
+
+How to do Looping in recipe?
+https://www.devopsschool.com/blog/chef-tutorials-how-to-looping-and-iterative-in-chef-cookbook-recipe/
+
+
+['vim', 'ntp', 'git'].each do |package|
+ package package do
+   action :install
+ end
+end
+
+
+
+
+
+What are the COMMON option(Properites) available for each resources
+
+https://www.devopsschool.com/blog/chef-tutorials-common-resource-functionality-in-chef-cookbook-recipe/
+
+
+
+
+How to set Notifications?
+
+https://www.devopsschool.com/blog/chef-notifies-and-subscribes-explained-with-examples/
+
+=========================================================
+
+
+config file - /etc/httpd/httpd.conf
+Do you need restart - YES
+
+Stateless - /var/www/html/index.html
+Do you need restart - NO
+
+
+package httpd
+
+template /etc/httpd/httpd.conf		- Req restart
+if change true
+	notify a resourcs 
+						service :restart
+
+cookbook_file /var/www/html/index.html - DO NOT Req restart
+
+service 
+		subscribe to template
+		detect change
+				action - restrat or none
+
+
+
+
+
+template '/etc/httpd/conf/httpd.conf' do
+  source 'httpd.conf.erb'
+end
+
+subscribes :delete, 'file[/var/www/html/index.html]', :immediately
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
