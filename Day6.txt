@@ -1,0 +1,38 @@
+Step 1 - Setup a Chef Infra Server using Chef-automate
+--------------------------------------------------------------------------------
+- https://www.devopsschool.com/blog/chef-tutorials-install-and-configure-chef-automate-and-infra-server/
+
+Server Add - https://ec2-15-207-198-5.ap-south-1.compute.amazonaws.com/
+User Name - admin
+Password - 8fbbad626f65e7d253bd8f4775c5968d
+
+IP - 15.207.198.5
+Username - centos
+Password - rajesh123
+
+Step 2 - Setup a Chef infra org and Chef use access for org [ in CHEF SERVER ]
+--------------------------------------------------------------------------------
+$ sudo chef-server-ctl user-create raj Raj Kumar raj@rajeshkumar.xyz "Rajesh123" --filename raj.pem
+$ sudo chef-server-ctl org-create raj-org "My Raj Org" --association_user raj --filename raj-org-validator.pem
+
+$ chef-server-ctl user-list
+$ chef-server-ctl org-list
+$ chef-server-ctl user-show XXXXX
+$ chef-server-ctl org-show XXXX
+
+Step 3 - Register org & Chef-server at chef-automate
+--------------------------------------------------------------------------------
+FQDN -  ec2-15-207-198-5.ap-south-1.compute.amazonaws.com
+Refer - - https://www.devopsschool.com/blog/chef-tutorials-install-and-configure-chef-automate-and-infra-server/
+
+
+Step 4 - Setup and validate knife
+
+Step 5 - Bootstrap a Node
+
+Step 6 - Run a Cookbook on Node
+
+
+
+
+
