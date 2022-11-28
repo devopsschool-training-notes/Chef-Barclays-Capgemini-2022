@@ -27,6 +27,29 @@ Refer - - https://www.devopsschool.com/blog/chef-tutorials-install-and-configure
 
 
 Step 4 - Setup and validate knife
+===========================================================================
+- Executable to connect to Chef-infra-Server
+- Must be installed in your work-station
+
+work-station === centos1 vm
+
+Refer - https://www.devopsschool.com/blog/configure-the-knife-command/
+Refer - https://www.devopsschool.com/blog/chef-tutorials-knife-command-line-reference/
+
+How knife works?
+---------------------------
+knife
+	~/.chef/credentials
+					chef server - add
+					username 
+					key
+					cookbooks location
+
+
+Chef Server = https://ec2-15-207-198-5.ap-south-1.compute.amazonaws.com/organizations/raj-org
+					
+WRONG - https://ec2-15-207-198-5.ap-south-1.compute.amazonaws.com/infrastructure/chef-servers/demo/organizations/raj-org
+
 
 Step 5 - Bootstrap a Node
 
