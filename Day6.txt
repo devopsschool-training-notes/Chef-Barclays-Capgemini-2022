@@ -53,9 +53,55 @@ WRONG - https://ec2-15-207-198-5.ap-south-1.compute.amazonaws.com/infrastructure
 
 Step 5 - Bootstrap a Node
 
+$ knife cookbook upload webserver
+$ knife cookbook upload dbserver
+$ knife cookbook upload webserver
+$ knife cookbook upload example
+$ knife cookbook -h
+$ knife cookbook delete example
+
+$ knife cookbook list
+$ knife cookbook -h
+
+
+[centos@ip-172-31-11-246 chef-repo]$ knife cookbook -h
+FATAL: Cannot find subcommand for: 'cookbook -h'
+Available cookbook subcommands: (for details, knife SUB-COMMAND --help)
+
+** COOKBOOK COMMANDS **
+knife cookbook bulk delete REGEX (options)
+knife cookbook delete COOKBOOK VERSION (options)
+knife cookbook download COOKBOOK [VERSION] (options)
+knife cookbook list (options)
+knife cookbook metadata COOKBOOK (options)
+knife cookbook metadata from file FILE (options)
+knife cookbook show COOKBOOK [VERSION] [PART] [FILENAME] (options)
+knife cookbook upload [COOKBOOKS...] (options)
+
+
+knife bootstrap 13.127.31.0 -x centos -P rajesh123 --sudo --node-name webserver1
+knife bootstrap 13.127.32.1 -x centos -P rajesh123 --sudo --node-name webserver2
+knife bootstrap ADDRESS --ssh-user centos --sudo --identity-file nv_lab_mumbai.pem --node-name node1
+knife client list
+knife client -h
+knife node list
+knife node -h
+
+================================USING UI===================
+# EDIT a Node and ADD runlist
+================================
+
 Step 6 - Run a Cookbook on Node
 
+Run the chef-client on all nodes
+
+$ knife ssh 'name:*' 'sudo chef-client' -P 'rajesh123'
 
 
+NEXT RUN CYCLE
 
+$ vi cookbooks/webserver/recipes/default.rb
+$ vi cookbooks/webserver/metadata.rb
+$ knife cookbook upload webserver
+$ knife ssh 'name:*' 'sudo chef-client' -P 'rajesh123'
 
