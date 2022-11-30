@@ -1,0 +1,36 @@
+https://www.devopsschool.com/blog/implement-chef-roles-using-chef-server/
+
+
+name "webserver"
+description "This role contains nodes, which act as web servers"
+run_list "recipe[webserver]"
+default_attributes 'ntp' => {
+  'ntpdate' => {
+    'disable' => true
+  }
+}
+
+knife role from file webserver.rb
+
+
+knife ssh "role:webserver" "sudo chef-client"
+
+
+
+EXAMPLE
+--------------
+{
+  "name": "rajesh-node-1",
+  "chef_environment": "_default",
+  "normal": {
+    "tags": [
+
+    ]
+  },
+  "policy_name": null,
+  "policy_group": null,
+  "run_list": [
+  "role[web-role]"
+]
+
+}
