@@ -34,3 +34,63 @@ EXAMPLE
 ]
 
 }
+===========================================
+How to work chef solo?
+
+Step - 1 - Install Chef solo
+
+Step - 2 - Have your cookbooks?
+
+Step - 3 - Write a solo.rb
+- cookbook path
+-------------
+file_cache_path "/root/chef-solo"
+cookbook_path "/root/chef-repo/cookbooks"
+----------------------
+Step - 4 - Write a node.json
+
+{
+"run_list": [ "recipe[webserver]" ]
+}
+
+Step - 5 - run this command
+
+$ chef-solo -c solo.rb -j node.json
+$ chef-solo -c chef-repo/solo.rb -j chef-repo/node.json
+
+
+
+=========================
+
+/opt/chef-repo
+		cookbooks
+		roles
+		databags
+		solo.rb
+		node.json
+
+
+--------Option - Fixed time or Change in Code in Cookbook  ---------------
+
+--------------------------------
+crontab
+---------------
+git pull origin master
+chef-solo -c solo.rb -j node.json
+		chef-client
+=========================
+crontab - script - every mins
+---------------
+if 
+	git pull origin master
+	detect new commit id
+then
+	chef-solo -c solo.rb -j node.json
+else
+	nothing
+
+
+
+
+
+
