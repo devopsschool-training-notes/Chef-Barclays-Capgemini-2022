@@ -1,0 +1,17 @@
+Step 1- Install Docker
+https://www.devopsschool.com/blog/docker-installation-and-configurations/
+
+Step 2- Setup kitchen env
+https://www.devopsschool.com/blog/chef-tutorials-test-kitchen-workflow-and-examples/
+
+$ kitchen init --create-gemfile
+
+Step 3 - Add kitchen.yml file in the place where you have cookbooks dir
+- https://gist.github.com/devops-school/caf80bcc51f50409a89adcee712154a0#file-kitchen-yml
+
+Step 4 - Follow a commands
+https://gist.github.com/devops-school/caf80bcc51f50409a89adcee712154a0#file-commands-txt
+
+
+Reference-
+https://www.devopsschool.com/blog/?s=test+kitchen
